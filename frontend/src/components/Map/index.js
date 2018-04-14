@@ -32,8 +32,8 @@ const MyMapComponent = compose(
 
 export default class Map extends React.PureComponent {
   state = {
-    isMarkerShown: false
-  };
+    isMarkerShown: true,
+  }
 
   componentDidMount() {
     this.delayedShowMarker();

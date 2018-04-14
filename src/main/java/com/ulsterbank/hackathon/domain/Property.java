@@ -1,10 +1,13 @@
 package com.ulsterbank.hackathon.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Property {
 
+    @JsonProperty("geo")
     private GeoLocation geoLocation;
     private BigDecimal price;
     private String Address;
@@ -14,6 +17,7 @@ public class Property {
     private Double floorArea;
     private LocalDate dateEntered;
     private String picture;
+    private Integer id;
 
     public GeoLocation getGeoLocation() {
         return geoLocation;
@@ -85,5 +89,13 @@ public class Property {
 
     public void setPicture(String picture) {
         this.picture = picture;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

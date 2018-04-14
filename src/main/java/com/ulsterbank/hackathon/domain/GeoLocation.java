@@ -1,8 +1,13 @@
 package com.ulsterbank.hackathon.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class GeoLocation {
 
+    @JsonProperty("lat")
     private Double latitude;
+
+    @JsonProperty("lng")
     private Double longitude;
 
     public GeoLocation(Double latitude, Double longitude) {

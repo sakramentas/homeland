@@ -9,7 +9,10 @@
     "react-dom": "^16.3.1",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4"
+    "react-router-page-transition": "^3.1.0",
+    "react-scripts": "1.1.4",
+    "react-simple-chatbot": "^0.2.9",
+    "styled-components": "^3.2.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,6 +24,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "react-transition-group": "^2.3.1",
     "recompose": "^0.26.0"
   }
 }

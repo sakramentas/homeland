@@ -1,24 +1,20 @@
 import React from 'react';
+import axios from 'axios';
 import { compose, withProps } from 'recompose';
 import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker,
   StreetViewPanorama,
   OverlayView
 } from 'react-google-maps';
 
-import MarkerComp from './Marker';
-
+import Overlay from './Marker';
 import config from '../../core/config';
 
-const [lat, lng] = config.COORDS.MAYOR_SQUARE;
+import './street-view.css';
 
-const getPixelPositionOffset = (width, height) => ({
-  x: -(width / 2),
-  y: -(height / 2)
-});
+const [lat, lng] = config.COORDS.MAYOR_SQUARE;
 
 const StreetViewPanormaWithAnOverlayView = compose(
   withProps({
@@ -26,43 +22,32 @@ const StreetViewPanormaWithAnOverlayView = compose(
       config.MAPS.KEY
     }&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
+    containerElement: <div className="streetViewWrap" />,
+    mapElement: <div className="streetViewWrap" />,
     center: { lat, lng }
   }),
   withScriptjs,
   withGoogleMap
-)(props => (
-  <GoogleMap defaultZoom={8} defaultCenter={props.center}>
-    <StreetViewPanorama defaultPosition={props.center} visible>
-      {config.HOUSES.map(({ lat, lng, title, price }, i) => (
-        <OverlayView
-          key={i}
-          position={{ lat, lng }}
-          mapPaneName={OverlayView.OVERLAY_LAYER}
-          getPixelPositionOffset={getPixelPositionOffset}
-        >
-          <MarkerComp title={title} price={price} />
-        </OverlayView>
-      ))}
+)(({ center, properties }) => (
+  <GoogleMap defaultZoom={8} defaultCenter={center}>
+    <StreetViewPanorama defaultPosition={center} visible>
+      <Overlay properties={properties} />
     </StreetViewPanorama>
   </GoogleMap>
 ));
 
 export default class Map extends React.PureComponent {
   state = {
-    isMarkerShown: false
+    properties: []
   };
 
-  componentDidMount() {
-    this.delayedShowMarker();
+  async componentDidMount() {
+    const { data } = await axios.get(
+      `${config.API_HOST}${config.API.PROPERTIES}`
+    );
+
+    this.setState({ properties: data.properties });
   }
-
-  delayedShowMarker = () => {
-    setTimeout(() => {
-      this.setState({ isMarkerShown: true });
-    }, 3000);
-  };
 
   handleMarkerClick = () => {
     this.setState({ isMarkerShown: false });
@@ -70,6 +55,8 @@ export default class Map extends React.PureComponent {
   };
 
   render() {
-    return <StreetViewPanormaWithAnOverlayView />;
+    return (
+      <StreetViewPanormaWithAnOverlayView properties={this.state.properties} />
+    );
   }
 }

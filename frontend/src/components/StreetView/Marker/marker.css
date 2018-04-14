@@ -1,0 +1,8 @@
+.markerItemWrap {
+  cursor: pointer;
+  background: #28282e;
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px; }
+  .markerItemWrap .priceCon {
+    font-size: 20px; }

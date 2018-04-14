@@ -9,7 +9,7 @@ public class Account {
     private String bBan;
     private String accountType;
     private String accountFriendlyName;
-    private String accountBalance;
+    private Double accountBalance;
     private String accountCurrency;
 
     public String getId() {
@@ -68,11 +68,11 @@ public class Account {
         this.accountFriendlyName = accountFriendlyName;
     }
 
-    public String getAccountBalance() {
+    public Double getAccountBalance() {
         return accountBalance;
     }
 
-    public void setAccountBalance(String accountBalance) {
+    public void setAccountBalance(Double accountBalance) {
         this.accountBalance = accountBalance;
     }
 

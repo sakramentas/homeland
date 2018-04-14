@@ -1,16 +1,14 @@
 package com.ulsterbank.hackathon.services;
 
 import com.ulsterbank.hackathon.domain.Account;
-import com.ulsterbank.hackathon.domain.AccountsWrapper;
-import com.ulsterbank.hackathon.domain.Transaction;
-
-import java.util.List;
+import com.ulsterbank.hackathon.domain.wrappers.Accounts;
+import com.ulsterbank.hackathon.domain.wrappers.Transactions;
 
 public interface UlsterBankAPIService {
 
-    AccountsWrapper getWrapper();
+    Accounts getWrapper();
 
     Account getSingleAccount(String accountId);
 
-    List<Transaction> getAccountTransactions(Account account);
+    Transactions getAccountTransactions(Account account);
 }

@@ -19,7 +19,7 @@ const theme = {
 
 const style = {
   height: 'calc(100vh - 55px)',
-  borderRadius: 'none',
+  borderRadius: '0px',
   position: 'relative'
 };
 

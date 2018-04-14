@@ -14,7 +14,7 @@ const [lat, lng] = config.COORDS.CHQ;
 const MyMapComponent = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${
-      config.API.MAPS
+      config.MAPS.KEY
     }&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `100%` }} />,

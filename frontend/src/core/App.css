@@ -4,17 +4,19 @@ body {
   font-family: sans-serif; }
 
 .App {
-  text-align: center;
-  height: 800px; }
+  text-align: center; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px; }
 
 .App-header {
-  background-color: #222;
+  background-color: #ffffff;
   padding: 5px;
   color: white; }
+  .App-header .header-logo {
+    width: 160px;
+    height: auto; }
 
 .App-title {
   font-size: 1.5em; }
@@ -27,3 +29,95 @@ body {
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
+
+.transition-wrapper {
+  position: relative;
+  z-index: 1; }
+  .transition-wrapper .transition-item {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0; }
+
+.chatbot-page {
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 100vh;
+  background-color: #03a9f4;
+  transition: transform 0.5s, opacity 0.5s; }
+  .chatbot-page.transition-appear {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0); }
+  .chatbot-page.transition-appear.transition-appear-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .chatbot-page.transition-leave {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .chatbot-page.transition-leave.transition-leave-active {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0); }
+
+.maps-page {
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 100vh;
+  background-color: #fff;
+  transition: transform 0.5s, opacity 0.5s;
+  transform: translate3d(0, 0, 0); }
+  .maps-page.transition-appear {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0); }
+  .maps-page.transition-appear.transition-appear-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .maps-page.transition-leave {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .maps-page.transition-leave.transition-leave-active {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0); }
+
+.home-page {
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 100vh;
+  background-color: #fff;
+  transition: transform 0.5s, opacity 0.5s;
+  transform: translate3d(0, 0, 0); }
+  .home-page.transition-appear {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0); }
+  .home-page.transition-appear.transition-appear-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .home-page.transition-leave {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .home-page.transition-leave.transition-leave-active {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0); }
+
+.streetview-page {
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 100vh;
+  background-color: #fff;
+  transition: transform 0.5s, opacity 0.5s;
+  transform: translate3d(0, 0, 0); }
+  .streetview-page.transition-appear {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0); }
+  .streetview-page.transition-appear.transition-appear-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .streetview-page.transition-leave {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .streetview-page.transition-leave.transition-leave-active {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0); }

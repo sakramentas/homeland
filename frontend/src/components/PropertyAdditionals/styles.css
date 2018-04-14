@@ -1,0 +1,11 @@
+.property-info-additionals {
+  padding: 0.4rem 0.9rem; }
+  .property-info-additionals span {
+    display: inline-flex;
+    width: 50%;
+    padding: 6px 0;
+    font-size: 0.9rem; }
+    .property-info-additionals span > img {
+      width: auto;
+      height: 20px;
+      margin-right: 0.4rem; }

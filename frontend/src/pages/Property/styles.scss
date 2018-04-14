@@ -33,10 +33,33 @@
     display: block;
     height: 30px;
     background-color: #76b236;
-    color: white;
     font-size: 1rem;
     text-align: center;
     padding: 5px 4px;
     font-weight: bold;
+    span {
+      color: white;
+    }
   }
+  .property-info {
+    display: flex;
+    height: 100px;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 11px;
+    > div {
+      flex: 1;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      > img {
+        width: 32%;
+        margin-bottom: 10px;
+      }
+      > span {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
 }

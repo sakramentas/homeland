@@ -29,8 +29,25 @@
     display: block;
     height: 30px;
     background-color: #76b236;
-    color: white;
     font-size: 1rem;
     text-align: center;
     padding: 5px 4px;
     font-weight: bold; }
+    .property-page .property-tag span {
+      color: white; }
+  .property-page .property-info {
+    display: flex;
+    height: 100px;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 11px; }
+    .property-page .property-info > div {
+      flex: 1;
+      flex-direction: column;
+      display: flex;
+      align-items: center; }
+      .property-page .property-info > div > img {
+        width: 32%;
+        margin-bottom: 10px; }
+      .property-page .property-info > div > span {
+        font-size: 0.9rem; }

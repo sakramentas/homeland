@@ -7,10 +7,7 @@ import com.ulsterbank.hackathon.services.PropertiesAPIService;
 import com.ulsterbank.hackathon.services.UlsterBankAPIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.HashMap;
@@ -19,6 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/homeland/api")
+@CrossOrigin(origins = "*")
 public class APIController {
 
     private UlsterBankAPIService ulsterBankAPIService;

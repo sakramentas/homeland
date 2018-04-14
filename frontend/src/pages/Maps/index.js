@@ -7,10 +7,10 @@ class MapPage extends Component {
   render() {
     return (
       <div className="transition-item maps-page">
+        <Map />
         <Link to={`/chatbot`} className="list-item">
           <span>chatbot</span>
         </Link>
-        <Map />
       </div>
     );
   }

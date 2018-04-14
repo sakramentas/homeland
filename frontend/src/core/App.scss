@@ -1,40 +1,17 @@
+html {
+  background-color: #092f63;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #092f63;
 }
 
 .App {
   text-align: center;
   //height: 800px;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #ffffff;
-  padding: 5px;
-  color: white;
-  .header-logo {
-    width: 160px;
-    height: auto;
-  }
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 .transition-wrapper {
@@ -51,9 +28,7 @@ body {
 .chatbot-page {
   overflow: auto;
   box-sizing: border-box;
-  padding: 20px;
   height: 100vh;
-  background-color: #03a9f4;
   transition: transform 0.5s, opacity 0.5s;
 
   &.transition-appear {
@@ -79,7 +54,6 @@ body {
 .maps-page {
   overflow: auto;
   box-sizing: border-box;
-  padding: 20px;
   height: 100vh;
   background-color: #fff;
   transition: transform 0.5s, opacity 0.5s;
@@ -137,7 +111,6 @@ body {
 .streetview-page {
   overflow: auto;
   box-sizing: border-box;
-  padding: 20px;
   height: 100vh;
   background-color: #fff;
   transition: transform 0.5s, opacity 0.5s;

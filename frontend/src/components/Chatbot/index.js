@@ -18,7 +18,8 @@ const theme = {
 };
 
 const style = {
-  height: '740px',
+  height: 'calc(100vh - 55px)',
+  borderRadius: '0px',
   position: 'relative'
 };
 
@@ -45,6 +46,7 @@ export default class Chatbot extends React.PureComponent {
           style={style}
           footerStyle={footerStyle}
           contentStyle={contentStyle}
+          hideHeader
         />
       </ThemeProvider>
     )

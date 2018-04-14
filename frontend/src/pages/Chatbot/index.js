@@ -7,10 +7,10 @@ class ChatbotPage extends Component {
   render() {
     return (
       <div className="transition-item chatbot-page">
+        <Chatbot/>
         <Link to={`/maps`} className="list-item">
           <span>maps</span>
         </Link>
-        <Chatbot/>
       </div>
     );
   }

@@ -104,7 +104,6 @@ body {
 .streetview-page {
   overflow: auto;
   box-sizing: border-box;
-  padding: 20px;
   height: 100vh;
   background-color: #fff;
   transition: transform 0.5s, opacity 0.5s;

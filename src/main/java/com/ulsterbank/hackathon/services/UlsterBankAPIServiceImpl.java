@@ -1,6 +1,6 @@
 package com.ulsterbank.hackathon.services;
 
-import com.ulsterbank.hackathon.domain.CustomersWrapper;
+import com.ulsterbank.hackathon.domain.AccountsWrapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -33,13 +33,23 @@ public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
         this.restTemplate = restTemplate;
     }
 
-    public CustomersWrapper getCustomers() {
+    public AccountsWrapper getAccounts() {
+        String apiCustomerId = getCustomerId();
+        String customersUrl = baseURL + "/customers/" + apiCustomerId + "/accounts";
+        ResponseEntity<AccountsWrapper> results = restTemplate.exchange(customersUrl, HttpMethod.GET, addRequestHeaders(), AccountsWrapper.class);
+
+        AccountsWrapper accounts = results.getBody();
+
+        return accounts;
+    }
+
+    private String getCustomerId(){
         String customersUrl = baseURL + "/customers";
-        ResponseEntity<CustomersWrapper> results = restTemplate.exchange(customersUrl, HttpMethod.GET, addRequestHeaders(), CustomersWrapper.class);
+        ResponseEntity<AccountsWrapper> results = restTemplate.exchange(customersUrl, HttpMethod.GET, addRequestHeaders(), AccountsWrapper.class);
+        AccountsWrapper customers = results.getBody();
+        String apiCustomer = customers.getAccounts().get(0).getId();
 
-        CustomersWrapper customers = results.getBody();
-
-        return customers;
+        return apiCustomer;
     }
 
     private HttpEntity<String> addRequestHeaders() {

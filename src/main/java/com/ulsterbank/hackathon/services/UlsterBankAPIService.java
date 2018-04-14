@@ -1,8 +1,8 @@
 package com.ulsterbank.hackathon.services;
 
-import com.ulsterbank.hackathon.domain.CustomersWrapper;
+import com.ulsterbank.hackathon.domain.AccountsWrapper;
 
 public interface UlsterBankAPIService {
 
-    CustomersWrapper getCustomers();
+    AccountsWrapper getAccounts();
 }

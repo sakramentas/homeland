@@ -8,25 +8,24 @@ import {
 } from 'react-google-maps';
 
 import config from '../../core/config';
-console.log(config);
+
+const [lat, lng] = config.COORDS.CHQ;
+
 const MyMapComponent = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${
       config.API.MAPS
     }&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: <div style={{ height: `100%` }} />,
     mapElement: <div style={{ height: `100%` }} />
   }),
   withScriptjs,
   withGoogleMap
 )(props => (
-  <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
+  <GoogleMap defaultZoom={12} defaultCenter={{ lat, lng }}>
     {props.isMarkerShown && (
-      <Marker
-        position={{ lat: -34.397, lng: 150.644 }}
-        onClick={props.onMarkerClick}
-      />
+      <Marker position={{ lat, lng }} onClick={props.onMarkerClick} />
     )}
   </GoogleMap>
 ));

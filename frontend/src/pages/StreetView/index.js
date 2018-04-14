@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import {  withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+
 import './styles.css';
-import Map from '../../components/Map';
+import StreetView from '../../components/StreetView';
 
 class MapPage extends Component {
   render() {
     return (
       <div className="App">
-        <Map isMarkerShown />
+        <StreetView />
       </div>
     );
   }

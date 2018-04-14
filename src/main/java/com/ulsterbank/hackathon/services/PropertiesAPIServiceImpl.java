@@ -17,7 +17,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
     public PropertiesAPIServiceImpl() {
         Property property1 = new Property();
         property1.setGeoLocation(new GeoLocation(53.349687,-6.241755));
-        property1.setPrice(new BigDecimal(285));
+        property1.setPrice("285,000.000");
         property1.setAddress("96 Rathlin House, Custom House Square, Lower Mayor Street, IFSC, Dublin 1, D01 X8W3");
         property1.setEnergyRate("B3");
         property1.setBedRoomQty(1);
@@ -29,7 +29,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
 
         Property property2 = new Property();
         property2.setGeoLocation(new GeoLocation(53.349353,-6.242611));
-        property2.setPrice(new BigDecimal(295));
+        property2.setPrice("295,000.000");
         property2.setAddress("7 Boyne House, Custom House Square, Mayor Street Lower, IFSC, Dublin 1, D01 CX78");
         property2.setEnergyRate("C3");
         property2.setBedRoomQty(1);
@@ -41,7 +41,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
 
         Property property3 = new Property();
         property3.setGeoLocation(new GeoLocation(53.349322,-6.243839));
-        property3.setPrice(new BigDecimal(325));
+        property3.setPrice("325,000.000");
         property3.setAddress("55 Spencer House, IFSC, Custom House Square, Dublin 1");
         property3.setEnergyRate("B3");
         property3.setBedRoomQty(2);
@@ -53,7 +53,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
 
         Property property4 = new Property();
         property4.setGeoLocation(new GeoLocation(53.349507,-6.245438));
-        property4.setPrice(new BigDecimal(220));
+        property4.setPrice("220,000.000");
         property4.setAddress("Apartment 14, First Floor, Malton House, Customs House Square, Dublin 1");
         property4.setEnergyRate("C3");
         property4.setBedRoomQty(1);
@@ -65,7 +65,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
 
         Property property5 = new Property();
         property5.setGeoLocation(new GeoLocation(53.349744,-6.244698));
-        property5.setPrice(new BigDecimal(280));
+        property5.setPrice("280,000.000");
         property5.setAddress("Apt 170 Skellig House, Block G, Custom House Square, IFSC, Dublin 1");
         property5.setEnergyRate("D1");
         property5.setBedRoomQty(1);
@@ -77,7 +77,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
 
         Property property6 = new Property();
         property6.setGeoLocation(new GeoLocation(53.349859,-6.246788));
-        property6.setPrice(new BigDecimal(210));
+        property6.setPrice("210,000.000");
         property6.setAddress("Apt. 25 Gandon House,IFSC, Dublin 1");
         property6.setEnergyRate("D1");
         property6.setBedRoomQty(1);
@@ -89,7 +89,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
 
         Property property7 = new Property();
         property7.setGeoLocation(new GeoLocation(53.350081,-6.247393));
-        property7.setPrice(new BigDecimal(350));
+        property7.setPrice("350,000.000");
         property7.setAddress("194 Tuskar Rock, Custom House Harbour, IFSC, Dublin 1");
         property7.setEnergyRate("D1");
         property7.setBedRoomQty(2);
@@ -101,7 +101,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
 
         Property property8 = new Property();
         property8.setGeoLocation(new GeoLocation(53.348413,-6.246967));
-        property8.setPrice(new BigDecimal(385));
+        property8.setPrice("385,000.000");
         property8.setAddress("246 The Asgard, Custom House Harbour, IFSC, Co. Dublin");
         property8.setEnergyRate("C3");
         property8.setBedRoomQty(2);
@@ -113,7 +113,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
 
         Property property9 = new Property();
         property9.setGeoLocation(new GeoLocation(53.350597,-6.246101));
-        property9.setPrice(new BigDecimal(365));
+        property9.setPrice("365,000.000");
         property9.setAddress("150 Ratlin O'Birne House, Custom House Harbour, IFSC, Co. Dublin");
         property9.setEnergyRate("D2");
         property9.setBedRoomQty(2);
@@ -125,7 +125,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
 
         Property property10 = new Property();
         property10.setGeoLocation(new GeoLocation(53.350602,-6.246019));
-        property10.setPrice(new BigDecimal(350));
+        property10.setPrice("350,000.000");
         property10.setAddress("Apt 166 Raithlin O'Birne Custom House Harbour Apts, IFSC, Dublin 1, D01 C668");
         property10.setEnergyRate("D1");
         property10.setBedRoomQty(2);

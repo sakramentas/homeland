@@ -9,7 +9,7 @@ public class Property {
 
     @JsonProperty("geo")
     private GeoLocation geoLocation;
-    private BigDecimal price;
+    private String price;
     private String Address;
     private String energyRate;
     private Integer bedRoomQty;
@@ -27,11 +27,11 @@ public class Property {
         this.geoLocation = geoLocation;
     }
 
-    public BigDecimal getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

@@ -2,14 +2,15 @@ package com.ulsterbank.hackathon.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Property {
 
     @JsonProperty("geo")
     private GeoLocation geoLocation;
-    private String price;
+    private Integer price;
     private String Address;
     private String energyRate;
     private Integer bedRoomQty;
@@ -18,6 +19,7 @@ public class Property {
     private LocalDate dateEntered;
     private String picture;
     private Integer id;
+    private String affordabilityStatus;
 
     public GeoLocation getGeoLocation() {
         return geoLocation;
@@ -27,11 +29,11 @@ public class Property {
         this.geoLocation = geoLocation;
     }
 
-    public String getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
@@ -97,5 +99,13 @@ public class Property {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getAffordabilityStatus() {
+        return affordabilityStatus;
+    }
+
+    public void setAffordabilityStatus(String affordabilityStatus) {
+        this.affordabilityStatus = affordabilityStatus;
     }
 }

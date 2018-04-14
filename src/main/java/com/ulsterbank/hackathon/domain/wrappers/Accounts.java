@@ -1,10 +1,11 @@
-package com.ulsterbank.hackathon.domain;
+package com.ulsterbank.hackathon.domain.wrappers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.ulsterbank.hackathon.domain.Account;
 
 import java.util.List;
 
-public class AccountsWrapper {
+public class Accounts {
 
     @JsonProperty("results")
     private List<Account> accounts;

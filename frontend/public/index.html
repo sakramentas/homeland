@@ -2,12 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#092f63" />
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
+    <!-- iPad retina portrait startup image -->
+    <link href="//placehold.it/1536x2008.png"
+          media="(device-width: 768px) and (device-height: 1024px)
+                and (-webkit-device-pixel-ratio: 2)
+                and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPad retina landscape startup image -->
+    <link href="//placehold.it/1496x2048.png"
+          media="(device-width: 768px) and (device-height: 1024px)
+                and (-webkit-device-pixel-ratio: 2)
+                and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPad non-retina portrait startup image -->
+    <link href="//placehold.it/768x1004.png"
+          media="(device-width: 768px) and (device-height: 1024px)
+                and (-webkit-device-pixel-ratio: 1)
+                and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPad non-retina landscape startup image -->
+    <link href="//placehold.it/748x1024.png"
+          media="(device-width: 768px) and (device-height: 1024px)
+                and (-webkit-device-pixel-ratio: 1)
+                and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 Plus portrait startup image -->
+    <link href="/loading_screen.gif"
+          media="(device-width: 414px) and (device-height: 736px)
+                and (-webkit-device-pixel-ratio: 3)
+                and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 Plus landscape startup image -->
+    <link href="/loading_screen.gif"
+          media="(device-width: 414px) and (device-height: 736px)
+                and (-webkit-device-pixel-ratio: 3)
+                and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 startup image -->
+    <link href="/loading_screen.gif"
+          media="(device-width: 375px) and (device-height: 667px)
+                and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 5 startup image -->
+    <link href="/loading_screen.gif"
+          media="(device-width: 320px) and (device-height: 568px)
+                and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone < 5 retina startup image -->
+    <link href="//placehold.it/640x920.png"
+          media="(device-width: 320px) and (device-height: 480px)
+                and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone < 5 non-retina startup image -->
+    <link href="//placehold.it/320x460.png"
+          media="(device-width: 320px) and (device-height: 480px)
+                and (-webkit-device-pixel-ratio: 1)"
+          rel="apple-touch-startup-image">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <!--
@@ -19,6 +86,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <title>React App</title>
   </head>
   <body>

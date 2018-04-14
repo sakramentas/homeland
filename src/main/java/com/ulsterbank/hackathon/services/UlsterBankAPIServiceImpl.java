@@ -1,8 +1,8 @@
 package com.ulsterbank.hackathon.services;
 
 import com.ulsterbank.hackathon.domain.Account;
-import com.ulsterbank.hackathon.domain.AccountsWrapper;
-import com.ulsterbank.hackathon.domain.Transaction;
+import com.ulsterbank.hackathon.domain.wrappers.Accounts;
+import com.ulsterbank.hackathon.domain.wrappers.Transactions;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -10,8 +10,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
 
 @Service
 public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
@@ -38,27 +36,27 @@ public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
     }
 
     @Override
-    public AccountsWrapper getWrapper() {
+    public Accounts getWrapper() {
         String apiCustomerId = getCustomerId();
         String customersUrl = baseURL + "/customers/" + apiCustomerId + "/accounts";
-        ResponseEntity<AccountsWrapper> results = restTemplate.exchange(customersUrl, HttpMethod.GET, addRequestHeaders(), AccountsWrapper.class);
+        ResponseEntity<Accounts> results = restTemplate.exchange(customersUrl, HttpMethod.GET, addRequestHeaders(), Accounts.class);
 
-        AccountsWrapper accounts = results.getBody();
+        Accounts accounts = results.getBody();
 
         return accounts;
     }
 
-    private String getCustomerId(){
+    private String getCustomerId() {
         String customersUrl = baseURL + "/customers";
-        ResponseEntity<AccountsWrapper> results = restTemplate.exchange(customersUrl, HttpMethod.GET, addRequestHeaders(), AccountsWrapper.class);
-        AccountsWrapper customers = results.getBody();
+        ResponseEntity<Accounts> results = restTemplate.exchange(customersUrl, HttpMethod.GET, addRequestHeaders(), Accounts.class);
+        Accounts customers = results.getBody();
         String apiCustomer = customers.getAccounts().get(0).getId();
 
         return apiCustomer;
     }
 
     @Override
-    public Account getSingleAccount(String accountId){
+    public Account getSingleAccount(String accountId) {
         String singleAccountUrl = baseURL + "/accounts/" + accountId;
         ResponseEntity<Account> results = restTemplate.exchange(singleAccountUrl, HttpMethod.GET, addRequestHeaders(), Account.class);
         Account account = results.getBody();
@@ -67,8 +65,12 @@ public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
     }
 
     @Override
-    public List<Transaction> getAccountTransactions(Account account) {
-        return null;
+    public Transactions getAccountTransactions(Account account) {
+        String accountTransactions = baseURL + "/accounts/" + account.getId() + "/transactions";
+        ResponseEntity<Transactions> results = restTemplate.exchange(accountTransactions, HttpMethod.GET, addRequestHeaders(), Transactions.class);
+        Transactions transactions = results.getBody();
+
+        return transactions;
     }
 
 
@@ -78,6 +80,8 @@ public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
         httpHeaders.set(bearerRequestHeader, bearerToken);
 
         HttpEntity<String> requestHeaders = new HttpEntity<>("parameters", httpHeaders);
+
+        //TODO customer object / annual gross salary / marital status
 
         return requestHeaders;
     }

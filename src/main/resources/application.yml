@@ -1,0 +1,10 @@
+api:
+    ulster:
+        baseurl: "https://bluebank.azure-api.net/api/v0.7"
+        tokens:
+            dev:
+                header: "Ocp-Apim-Subscription-Key"
+                key: "f474cb87d0b24d7888a2d75d59810413"
+            bearer:
+                header: "Authorization"
+                key: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsifQ.eyJleHAiOjE1MjM3MTIwNzAsIm5iZiI6MTUyMzcwODQ3MCwidmVyIjoiMS4wIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5taWNyb3NvZnRvbmxpbmUuY29tL2Q1Zjg1NjgyLWY2N2EtNDQ0NC05MzY5LTJjNWVjMWEwZThjZC92Mi4wLyIsInN1YiI6Ijk1ZTk5NzJlLTViMWItNDYxNC05M2IxLWY1NDZjNmE4OWU0YiIsImF1ZCI6IjQwOTU3YjljLTYzYmMtNGFiNC05ZWNiLTY3YjU0M2M4ZTRjYSIsIm5vbmNlIjoiZGVmYXVsdE5vbmNlIiwiaWF0IjoxNTIzNzA4NDcwLCJhdXRoX3RpbWUiOjE1MjM3MDg0NzAsIm9pZCI6Ijk1ZTk5NzJlLTViMWItNDYxNC05M2IxLWY1NDZjNmE4OWU0YiIsIm5hbWUiOiJBbGxhbiIsImZhbWlseV9uYW1lIjoiSGFlcmJlciIsImdpdmVuX25hbWUiOiJBbGxhbiIsImVtYWlscyI6WyJhbGxhbl9oa3JzQGhvdG1haWwuY29tIl0sInRmcCI6IkIyQ18xX0JsdWVCYW5rU1VTSSJ9.IrcxaGXI2S5c-3qivjHuyZ2J7YpWlOjlyz5E5QG0bFtm5s0pKCuQpclZ0k8p7cvP7QnBaqD0B283KSrXlTrD7e1BrrzZAP1DeLulFdNLXTbN-kT7e9O1mUYCsQ0LwNT_tfjnfugXDq3Vo8IyFN8gyHuJT3xVRZvrhfB-WQvhnjzjnqhf5vloFDc4f4da3a3Yn696jtJfupKhxbeDFva9xYEz41p4FpY9h6TWoHDwC4miGlshKaUgfC_xWHlm7N9nWJRYNeCk9OIQrXEKvq9hd-JUYCVmo9HG4B2V2fRycLSJtcvB99nznw7x-MFfywxFpRu36O21PhDTtgHLRrB4pw"

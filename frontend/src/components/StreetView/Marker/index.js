@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import { OverlayView } from 'react-google-maps';
 
 import './marker.css';
@@ -14,14 +15,20 @@ const colors = color =>
   ({ green: '#549638', amber: '#CC7723', red: '#D33737' }[color || 'green']);
 
 const Marker = ({
+  id,
   title,
   floorArea,
   price = 0,
-  affordabilityStatus = 'green'
+  affordabilityStatus = 'green',
+  history
 }) => (
   <div
     className="markerItemWrap"
     style={{ background: colors(affordabilityStatus) }}
+    onClick={() => {
+      console.log(history);
+      history.push(`/property/${id}`);
+    }}
   >
     <div className="priceCon">€{price.toLocaleString()}</div>
     <span>
@@ -30,8 +37,9 @@ const Marker = ({
   </div>
 );
 
-export default ({ properties }) => {
+const MarkerComp = ({ properties, history }) => {
   const onlyFive = properties.splice(0, 5);
+
   return onlyFive.map((property, i) => {
     const {
       geo: { lat, lng },
@@ -44,8 +52,10 @@ export default ({ properties }) => {
         mapPaneName={OverlayView.OVERLAY_LAYER}
         getPixelPositionOffset={getPixelPositionOffset(~~getAptNum(address))}
       >
-        <Marker {...property} />
+        <Marker {...property} history={history} />
       </OverlayView>
     );
   });
 };
+
+export default withRouter(MarkerComp);

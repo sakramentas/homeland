@@ -7,7 +7,7 @@ class MapPage extends Component {
   render() {
     return (
       <div className="transition-item maps-page">
-        <Map />
+        <Map history={this.props.history}/>
         <Link to="/street-view" className="nav-street-view">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -7,10 +7,12 @@ import {
   GoogleMap,
   Marker
 } from 'react-google-maps';
+import createHistory from 'history/createBrowserHistory';
 import HeatmapLayer from 'react-google-maps/lib/components/visualization/HeatmapLayer';
 
 import config from '../../core/config';
 
+export const history = createHistory();
 const [lat, lng] = config.COORDS.CHQ;
 
 const MyMapComponent = compose(
@@ -27,11 +29,11 @@ const MyMapComponent = compose(
 )(({ properties, isMarkerShown, onMarkerClick }) => (
   <GoogleMap defaultZoom={14} defaultCenter={{ lat, lng }}>
     {isMarkerShown &&
-      properties.map(({ geo: { lat, lng } }) => (
+      properties.map(({ geo: { lat, lng }, id }) => (
         <Marker
           position={{ lat, lng }}
-          onClick={onMarkerClick}
-          icon="https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png"
+          onClick={() => onMarkerClick(id)}
+          icon={require('../../assets/pin-05.png')}
         />
       ))}
   </GoogleMap>
@@ -58,9 +60,8 @@ export default class Map extends React.PureComponent {
     }, 3000);
   };
 
-  handleMarkerClick = () => {
-    this.setState({ isMarkerShown: false });
-    this.delayedShowMarker();
+  handleMarkerClick = (id) => {
+    this.props.history.push(`/property/${id}`);
   };
 
   render() {

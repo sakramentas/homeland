@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-const PropertyInfo = (props) => {
+const PropertyInfo = ({ bedRoomQty }) => {
   return (
     <div className="property-info">
       <div className="property-info__house-type">
@@ -10,7 +10,7 @@ const PropertyInfo = (props) => {
       </div>
       <div className="property-info__bedrooms">
         <img src={require('../../assets/bed.png')} alt=""/>
-        <span>2 Bedrooms</span>
+        <span>{bedRoomQty} Bedrooms</span>
       </div>
       <div className="property-info__bathrooms">
         <img src={require('../../assets/bathtub.png')} alt=""/>

@@ -1,5 +1,7 @@
 package com.ulsterbank.hackathon.domain;
 
+import java.math.BigDecimal;
+
 public class Account {
 
     private String id;
@@ -9,7 +11,7 @@ public class Account {
     private String bBan;
     private String accountType;
     private String accountFriendlyName;
-    private Double accountBalance;
+    private BigDecimal accountBalance;
     private String accountCurrency;
 
     public String getId() {
@@ -68,11 +70,11 @@ public class Account {
         this.accountFriendlyName = accountFriendlyName;
     }
 
-    public Double getAccountBalance() {
+    public BigDecimal getAccountBalance() {
         return accountBalance;
     }
 
-    public void setAccountBalance(Double accountBalance) {
+    public void setAccountBalance(BigDecimal accountBalance) {
         this.accountBalance = accountBalance;
     }
 
@@ -83,4 +85,5 @@ public class Account {
     public void setAccountCurrency(String accountCurrency) {
         this.accountCurrency = accountCurrency;
     }
+
 }

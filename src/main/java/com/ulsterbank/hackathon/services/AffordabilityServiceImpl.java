@@ -1,9 +1,14 @@
 package com.ulsterbank.hackathon.services;
 
-import com.ulsterbank.hackathon.domain.*;
+import com.ulsterbank.hackathon.domain.Account;
+import com.ulsterbank.hackathon.domain.Customer;
+import com.ulsterbank.hackathon.domain.Property;
+import com.ulsterbank.hackathon.domain.Transaction;
 import com.ulsterbank.hackathon.domain.wrappers.Transactions;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,21 +24,13 @@ public class AffordabilityServiceImpl implements AffordabilityService {
         this.propertiesAPIService = propertiesAPIService;
     }
 
-    private void affordabilityEntryPoint(String accountId) {
-        Account account = ulsterBankAPIService.getSingleAccount(accountId);
-        Transactions accountTransactions = ulsterBankAPIService.getAccountTransactions(account);
-
-        Double annualGrossSalary = calculateAnnualGrossSalary(accountTransactions);
-        //income amount
-    }
-
-    private Double calculateAnnualGrossSalary(Transactions transactions) {
+    private BigDecimal calculateAnnualGrossSalary(Transactions transactions) {
         List<Transaction> accountTransactions = transactions.getTransactions();
 
         for (Transaction transaction : accountTransactions) {
             if (transaction.getTransactionDescription().equalsIgnoreCase("salary")) {
                 Double transactionAmount = transaction.getTransactionAmount();
-                return (transactionAmount * 12) * 1.5;
+                return new BigDecimal((transactionAmount * 12) * 1.5).setScale(3, RoundingMode.HALF_UP);
             }
         }
 
@@ -44,7 +41,7 @@ public class AffordabilityServiceImpl implements AffordabilityService {
     public Map getAffordability(Customer customer) {
         Account account = ulsterBankAPIService.getSingleAccount(customer.getAccount().getId());
         Transactions transactions = ulsterBankAPIService.getAccountTransactions(account);
-        Double totalOfExtraIncomes = getTotalOfExtraIncomes(customer.getExtraIncomes());
+        BigDecimal totalOfExtraIncomes = getTotalOfExtraIncomes(customer.getExtraIncomes());
         List<Property> properties = propertiesAPIService.getProperties();
         customer.setAnnualGrossSalary(calculateAnnualGrossSalary(transactions));
 
@@ -58,27 +55,27 @@ public class AffordabilityServiceImpl implements AffordabilityService {
         return customerAndProperties;
     }
 
-    private void updatePropertiesAccordingToAffordability(Customer customer, List<Property> properties, Double totalOfExtraIncomes){
-        Double accountBalance = customer.getAccount().getAccountBalance();
+    private void updatePropertiesAccordingToAffordability(Customer customer, List<Property> properties, BigDecimal totalOfExtraIncomes) {
+        BigDecimal accountBalance = customer.getAccount().getAccountBalance();
 
         if (customer.isFirstTimeBuyer()) {
             for (Property property : properties) {
-                double tenPercent = property.getPrice().doubleValue() * 0.1;
+                BigDecimal tenPercent = new BigDecimal(property.getPrice().doubleValue() * 0.1);
                 addFlagsToProperties(customer, totalOfExtraIncomes, accountBalance, property, tenPercent);
             }
         } else {
             for (Property property : properties) {
-                double twentyPercent = property.getPrice().doubleValue() * 0.2;
+                BigDecimal twentyPercent = new BigDecimal(property.getPrice().doubleValue() * 0.2);
                 addFlagsToProperties(customer, totalOfExtraIncomes, accountBalance, property, twentyPercent);
             }
         }
     }
 
-    private void addFlagsToProperties(Customer customer, Double totalOfExtraIncomes, Double accountBalance, Property property, double percentage) {
-        double totalCredit = (customer.getAnnualGrossSalary() + totalOfExtraIncomes) * 3.5;
+    private void addFlagsToProperties(Customer customer, BigDecimal totalOfExtraIncomes, BigDecimal accountBalance, Property property, BigDecimal propertyPercentageValue) {
+        BigDecimal totalCredit = new BigDecimal(customer.getAnnualGrossSalary().add(totalOfExtraIncomes).doubleValue() * 3.5);
 
-        if (accountBalance >= percentage) {
-            if (totalCredit >= property.getPrice()) {
+        if (accountBalance.compareTo(propertyPercentageValue) > 0) {
+            if (totalCredit.compareTo(property.getPrice()) > 0) {
                 property.setAffordabilityStatus("green");
             } else {
                 property.setAffordabilityStatus("red");
@@ -88,7 +85,7 @@ public class AffordabilityServiceImpl implements AffordabilityService {
         }
     }
 
-    private Double getTotalOfExtraIncomes(List<Double> extraIncomes){
-        return extraIncomes.stream().mapToDouble(Double::doubleValue).sum();
+    private BigDecimal getTotalOfExtraIncomes(List<BigDecimal> extraIncomes) {
+        return BigDecimal.valueOf(extraIncomes.stream().mapToDouble(BigDecimal::doubleValue).sum());
     }
 }

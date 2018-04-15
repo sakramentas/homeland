@@ -1,5 +1,6 @@
 package com.ulsterbank.hackathon.domain;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +16,8 @@ public class Customer {
     private String country;
     private String mobilePhone;
     private boolean firstTimeBuyer;
-    private Double annualGrossSalary;
-    private List<Double> extraIncomes = new ArrayList<>();
+    private BigDecimal annualGrossSalary;
+    private List<BigDecimal> extraIncomes = new ArrayList<>();
     private Account account;
 
     public String getId() {
@@ -99,19 +100,19 @@ public class Customer {
         this.firstTimeBuyer = firstTimeBuyer;
     }
 
-    public Double getAnnualGrossSalary() {
+    public BigDecimal getAnnualGrossSalary() {
         return annualGrossSalary;
     }
 
-    public void setAnnualGrossSalary(Double annualGrossSalary) {
+    public void setAnnualGrossSalary(BigDecimal annualGrossSalary) {
         this.annualGrossSalary = annualGrossSalary;
     }
 
-    public List<Double> getExtraIncomes() {
+    public List<BigDecimal> getExtraIncomes() {
         return extraIncomes;
     }
 
-    public void setExtraIncomes(List<Double> extraIncomes) {
+    public void setExtraIncomes(List<BigDecimal> extraIncomes) {
         this.extraIncomes = extraIncomes;
     }
 

@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -78,7 +79,7 @@ public class APIController {
             String[] extraIncomes = extraIncome.split(",");
             if (extraIncomes.length > 0) {
                 for (String income : extraIncomes) {
-                    customer.getExtraIncomes().add(Double.valueOf(income));
+                    customer.getExtraIncomes().add(new BigDecimal(income));
                 }
             }
         }

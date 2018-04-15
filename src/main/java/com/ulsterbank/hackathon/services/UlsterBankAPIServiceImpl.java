@@ -48,7 +48,7 @@ public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
     }
 
     @Override
-    public Customer getCustomer(String customerId){
+    public Customer getCustomer(String customerId) {
         if (customerId == null) {
             customerId = getCustomerId();
         }
@@ -70,6 +70,10 @@ public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
 
     @Override
     public Account getSingleAccount(String accountId) {
+        if (accountId == null) {
+            accountId = "fa9df4d3-93bb-449a-9ee8-45b4c98d34b4";
+        }
+
         String singleAccountUrl = baseURL + "/accounts/" + accountId;
         ResponseEntity<Account> results = restTemplate.exchange(singleAccountUrl, HttpMethod.GET, addRequestHeaders(), Account.class);
         Account account = results.getBody();

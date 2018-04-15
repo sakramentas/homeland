@@ -26,10 +26,10 @@ class PropertyPage extends Component {
       `${config.API_HOST}${config.API.PROPERTIES}`
     );
     this.setState({ property: this.getProperty(data.properties) });
-    console.log("STATE", this.state.property);
+    console.log('STATE', this.state.property);
   }
   render() {
-    const { picture, address, price } = this.state.property;
+    const { picture, address, price = 0 } = this.state.property;
     return (
       <div className="transition-item property-page">
         <PropertyImage url={picture} />
@@ -37,7 +37,7 @@ class PropertyPage extends Component {
         <PropertyTag {...this.state.property} />
         <PropertyInfo {...this.state.property} />
         <PropertyAdditionals {...this.state.property} />
-        <span className="property-price">€{price}</span>
+        <span className="property-price">€{price.toLocaleString()}</span>
         <button className="property-button">I'm interested</button>
       </div>
     );

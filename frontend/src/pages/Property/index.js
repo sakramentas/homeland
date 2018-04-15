@@ -26,6 +26,7 @@ class PropertyPage extends Component {
       `${config.API_HOST}${config.API.PROPERTIES}`
     );
     this.setState({ property: this.getProperty(data.properties) });
+    console.log("STATE", this.state.property);
   }
   render() {
     const { picture, address, price } = this.state.property;
@@ -34,8 +35,8 @@ class PropertyPage extends Component {
         <PropertyImage url={picture} />
         <span className="property-name">{address}</span>
         <PropertyTag {...this.state.property} />
-        <PropertyInfo />
-        <PropertyAdditionals />
+        <PropertyInfo {...this.state.property} />
+        <PropertyAdditionals {...this.state.property} />
         <span className="property-price">€{price}</span>
         <button className="property-button">I'm interested</button>
       </div>

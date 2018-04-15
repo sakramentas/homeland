@@ -1,9 +1,17 @@
-//.header {
-//  background-color: #092f63;
-//  padding: 5px;
-//  color: white;
-//  .header-logo {
-//    width: auto;
-//    height: 44px;
-//  }
-//}
+.property-tag {
+  display: block;
+  padding: 10px 4px;
+  font-weight: bold;
+  &.green {
+    background-color: #76b236;
+  }
+  &.amber {
+    background-color: #b2721e;
+  }
+  &.red {
+    background-color: #b21f13;
+  }
+  span {
+    color: white;
+  }
+}

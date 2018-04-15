@@ -23,13 +23,6 @@
     color: #616161;
     line-height: 1.2;
     font-weight: bold; }
-  .property-page .property-tag {
-    display: block;
-    background-color: #76b236;
-    padding: 10px 4px;
-    font-weight: bold; }
-    .property-page .property-tag span {
-      color: white; }
   .property-page .property-info {
     display: flex;
     height: 100px;

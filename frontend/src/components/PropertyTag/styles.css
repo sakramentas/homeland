@@ -1,0 +1,12 @@
+.property-tag {
+  display: block;
+  padding: 10px 4px;
+  font-weight: bold; }
+  .property-tag.green {
+    background-color: #76b236; }
+  .property-tag.amber {
+    background-color: #b2721e; }
+  .property-tag.red {
+    background-color: #b21f13; }
+  .property-tag span {
+    color: white; }

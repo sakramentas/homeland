@@ -5,6 +5,8 @@ import com.ulsterbank.hackathon.domain.Customer;
 import com.ulsterbank.hackathon.domain.wrappers.Accounts;
 import com.ulsterbank.hackathon.domain.wrappers.Transactions;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
+@EnableCaching
 public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
 
     @Value("${api.ulster.tokens.dev.header}")
@@ -37,6 +40,7 @@ public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
     }
 
     @Override
+    @Cacheable("accounts")
     public Accounts getWrapper() {
         String apiCustomerId = getCustomerId();
         String customersUrl = baseURL + "/customers/" + apiCustomerId + "/accounts";
@@ -48,6 +52,7 @@ public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
     }
 
     @Override
+    @Cacheable("customer")
     public Customer getCustomer(String customerId) {
         if (customerId == null) {
             customerId = getCustomerId();
@@ -69,6 +74,7 @@ public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
     }
 
     @Override
+    @Cacheable("account")
     public Account getSingleAccount(String accountId) {
         if (accountId == null) {
             accountId = "fa9df4d3-93bb-449a-9ee8-45b4c98d34b4";
@@ -82,6 +88,7 @@ public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
     }
 
     @Override
+    @Cacheable("transactions")
     public Transactions getAccountTransactions(Account account) {
         String accountTransactions = baseURL + "/accounts/" + account.getId() + "/transactions";
         ResponseEntity<Transactions> results = restTemplate.exchange(accountTransactions, HttpMethod.GET, addRequestHeaders(), Transactions.class);

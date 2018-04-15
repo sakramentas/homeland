@@ -31,7 +31,8 @@ class Chatbot extends React.PureComponent {
 
   displayInter({ value }) {
     const { history } = this.props;
-    this.setState({ showInterstitial: true });
+    setTimeout(() => this.setState({ showInterstitial: true }), 1000);
+
     setTimeout(() => history.push('/maps'), 4000);
   }
   render() {

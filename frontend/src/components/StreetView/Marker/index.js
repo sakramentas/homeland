@@ -26,7 +26,6 @@ const Marker = ({
     className="markerItemWrap"
     style={{ background: colors(affordabilityStatus) }}
     onClick={() => {
-      console.log(history);
       history.push(`/property/${id}`);
     }}
   >

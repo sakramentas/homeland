@@ -26,8 +26,17 @@ const style = {
 
 class Chatbot extends React.PureComponent {
   state = {
-    showInterstitial: false
+    showInterstitial: false,
+    showSplashScreen: false,
   };
+
+  componentWillMount() {
+    this.setState({ showSplashScreen: true })
+  }
+
+  componentDidMount() {
+    setTimeout(() => this.setState({ showSplashScreen: false }), 4000);
+  }
 
   displayInter({ value }) {
     const { history } = this.props;
@@ -35,22 +44,29 @@ class Chatbot extends React.PureComponent {
 
     setTimeout(() => history.push('/maps'), 4000);
   }
+
   render() {
     return [
       <ThemeProvider theme={theme} key="1">
-        <ChatBot
-          headerTitle="Let us find the best home for you"
-          recognitionEnable={true}
-          steps={chatbotData}
-          hideUserAvatar
-          className="chatbot"
-          style={style}
-          hideHeader
-          hideBotAvatar
-          handleEnd={this.displayInter.bind(this)}
-        />
+        {this.state.showSplashScreen ?
+          <div className="splash">
+            <img src={require('../../assets/splash.png')} alt=""/>
+          </div>
+          :
+          <ChatBot
+            headerTitle="Let us find the best home for you"
+            recognitionEnable={true}
+            steps={chatbotData}
+            hideUserAvatar
+            className="chatbot"
+            style={style}
+            hideHeader
+            hideBotAvatar
+            handleEnd={this.displayInter.bind(this)}
+          />
+        }
       </ThemeProvider>,
-      <BloodyInterstitial show={this.state.showInterstitial} key="2" />
+      <BloodyInterstitial show={this.state.showInterstitial} key="2"/>
     ];
   }
 }

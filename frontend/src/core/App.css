@@ -10,9 +10,14 @@ body {
 .splash {
   width: 100%;
   height: 100vh;
-  background-color: #003372; }
+  background-color: #003372;
+  top: -57px;
+  z-index: 999;
+  position: absolute; }
   .splash > img {
-    margin-top: 60%; }
+    margin-top: 73%;
+    width: 45%;
+    height: auto; }
 
 .App {
   text-align: center;

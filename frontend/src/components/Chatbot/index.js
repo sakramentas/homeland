@@ -1,6 +1,9 @@
 import React from 'react';
 import ChatBot from 'react-simple-chatbot';
+import { withRouter } from 'react-router';
 import { ThemeProvider } from 'styled-components';
+
+import BloodyInterstitial from '../BloodyInterstitial';
 import chatbotData from '../../core/chatbot/data';
 import './chatbot.css';
 
@@ -21,10 +24,19 @@ const style = {
   borderRadius: '0px'
 };
 
-export default class Chatbot extends React.PureComponent {
+class Chatbot extends React.PureComponent {
+  state = {
+    showInterstitial: false
+  };
+
+  displayInter({ value }) {
+    const { history } = this.props;
+    this.setState({ showInterstitial: true });
+    setTimeout(() => history.push('/maps'), 4000);
+  }
   render() {
-    return (
-      <ThemeProvider theme={theme}>
+    return [
+      <ThemeProvider theme={theme} key="1">
         <ChatBot
           headerTitle="Let us find the best home for you"
           recognitionEnable={true}
@@ -33,8 +45,12 @@ export default class Chatbot extends React.PureComponent {
           className="chatbot"
           style={style}
           hideHeader
+          handleEnd={this.displayInter.bind(this)}
         />
-      </ThemeProvider>
-    );
+      </ThemeProvider>,
+      <BloodyInterstitial show={this.state.showInterstitial} key="2" />
+    ];
   }
 }
+
+export default withRouter(Chatbot);

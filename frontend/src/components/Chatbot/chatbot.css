@@ -1,5 +1,7 @@
 .chatbot {
   height: 100%; }
+  .chatbot .rsc-content {
+    height: 92%; }
   .chatbot .rsc-container {
     z-index: auto; }
   .chatbot .rsc-os-option-element {

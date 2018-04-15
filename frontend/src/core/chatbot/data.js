@@ -31,93 +31,69 @@ const chatbotData = [
   {
     id: '5',
     message: 'How many is in your family?',
-    trigger: '6'
+    trigger: 'family'
   },
+  {
+    id: 'family',
+    options: [
+      { value: 'center', label: '1', trigger: '6' },
+      { value: 'middle', label: '2', trigger: '6' },
+      { value: 'not', label: '3+', trigger: '6' }
+    ]
+  },
+
   {
     id: '6',
+    message: 'What type of property are you after?',
+    trigger: 'home'
+  },
+
+  {
+    id: 'home',
     options: [
-      { value: 'center', label: '1', trigger: '7' },
-      { value: 'middle', label: '2', trigger: '7' },
-      { value: 'not', label: '3+', trigger: '7' }
+      { value: 'center', label: 'House', trigger: '7' },
+      { value: 'middle', label: 'Apartment', trigger: '7' },
+      { value: 'not', label: 'Flat', trigger: '7' }
     ]
   },
 
-  // {
-  //   id: '3',
-  //   message: 'Hi {previousValue}! What is your gender?',
-  //   trigger: 'gender'
-  // },
-
-  {
-    id: 'age',
-    user: true,
-    trigger: '7',
-    validator: value => {
-      if (isNaN(value)) {
-        return 'value must be a number';
-      } else if (value < 0) {
-        return 'value must be positive';
-      } else if (value > 120) {
-        return `${value}? Come on!`;
-      }
-
-      return true;
-    }
-  },
   {
     id: '7',
-    message: 'Great! Check out your summary',
-    trigger: 'review'
+    message: 'Is this your first time buying a home?',
+    trigger: 'firstTime'
   },
+
   {
-    id: 'review',
-    message: 'test',
-    asMessage: true,
-    trigger: 'update'
-  },
-  {
-    id: 'update',
-    message: 'Would you like to update some field?',
-    trigger: 'update-question'
-  },
-  {
-    id: 'update-question',
+    id: 'firstTime',
     options: [
-      { value: 'yes', label: 'Yes', trigger: 'update-yes' },
-      { value: 'no', label: 'No', trigger: 'end-message' }
+      { value: 'center', label: 'Yes', trigger: '8' },
+      { value: 'middle', label: 'No', trigger: '8' }
     ]
   },
+
   {
-    id: 'update-yes',
-    message: 'What field would you like to update?',
-    trigger: 'update-fields'
+    id: '8',
+    message: 'Are you purchasing with someone else?',
+    trigger: 'joint'
   },
+
   {
-    id: 'update-fields',
+    id: 'joint',
     options: [
-      { value: 'name', label: 'Name', trigger: 'update-name' },
-      { value: 'gender', label: 'Gender', trigger: 'update-gender' },
-      { value: 'age', label: 'Age', trigger: 'update-age' }
+      { value: 'center', label: 'Yes', trigger: 'sub-end-message' },
+      { value: 'middle', label: 'No', trigger: 'sub-end-message' }
     ]
   },
+
   {
-    id: 'update-name',
-    update: 'name',
-    trigger: '7'
+    id: 'sub-end-message',
+    message: 'Everything looks great!',
+    trigger: 'end-message'
   },
-  {
-    id: 'update-gender',
-    update: 'gender',
-    trigger: '7'
-  },
-  {
-    id: 'update-age',
-    update: 'age',
-    trigger: '7'
-  },
+
   {
     id: 'end-message',
-    message: 'Thanks! Your data was submitted successfully!',
+    message: 'Let us compile the information and find the right Home for you!',
     end: true
   }
 ];

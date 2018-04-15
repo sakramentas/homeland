@@ -7,12 +7,12 @@ const getAptNum = address => address.match(/\d+/)[0];
 
 const getPixelPositionOffset = aptNum => (width, height) => ({
   x: -(width / 2),
-  y: -(height * (aptNum / 20))
+  y: -(height * (aptNum / 40))
 });
 
 const Marker = ({ title, price, floorArea }) => (
   <div className="markerItemWrap">
-    <div className="priceCon">€{price},000</div>
+    <div className="priceCon">€{price}</div>
     <span>
       {floorArea}m<sup>2</sup>
     </span>
@@ -20,7 +20,7 @@ const Marker = ({ title, price, floorArea }) => (
 );
 
 export default ({ properties }) => {
-  const onlyFive = properties.splice(0, 8);
+  const onlyFive = properties.splice(0, 5);
   return onlyFive.map((property, i) => {
     const {
       geo: { lat, lng },

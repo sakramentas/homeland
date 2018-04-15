@@ -9,12 +9,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header/>
+        <Header />
         <PageTransition timeout={1000}>
           <Switch location={this.props.location}>
-            {routes.map(route => (
-              <Route {...route} key={route.path}/>
-            ))}
+            {routes.map(route => <Route {...route} key={route.path} />)}
           </Switch>
         </PageTransition>
       </div>

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './header.css';
 
 const Header = () => {
@@ -9,6 +11,7 @@ const Header = () => {
         alt=""
         className="header-logo"
       />
+      <Link to="/maps" className="nav-next" />
     </div>
   );
 };

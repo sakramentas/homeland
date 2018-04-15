@@ -29,7 +29,8 @@ body {
 .chatbot-page,
 .maps-page,
 .streetview-page,
-.home-page {
+.home-page,
+.property-page {
   box-sizing: border-box;
   position: absolute;
   top: 60px;
@@ -40,25 +41,29 @@ body {
   .chatbot-page.transition-appear,
   .maps-page.transition-appear,
   .streetview-page.transition-appear,
-  .home-page.transition-appear {
+  .home-page.transition-appear,
+  .property-page.transition-appear {
     opacity: 0;
     transform: translate3d(100%, 0, 0); }
   .chatbot-page.transition-appear.transition-appear-active,
   .maps-page.transition-appear.transition-appear-active,
   .streetview-page.transition-appear.transition-appear-active,
-  .home-page.transition-appear.transition-appear-active {
+  .home-page.transition-appear.transition-appear-active,
+  .property-page.transition-appear.transition-appear-active {
     opacity: 1;
     transform: translate3d(0, 0, 0); }
   .chatbot-page.transition-leave,
   .maps-page.transition-leave,
   .streetview-page.transition-leave,
-  .home-page.transition-leave {
+  .home-page.transition-leave,
+  .property-page.transition-leave {
     opacity: 1;
     transform: translate3d(0, 0, 0); }
   .chatbot-page.transition-leave.transition-leave-active,
   .maps-page.transition-leave.transition-leave-active,
   .streetview-page.transition-leave.transition-leave-active,
-  .home-page.transition-leave.transition-leave-active {
+  .home-page.transition-leave.transition-leave-active,
+  .property-page.transition-leave.transition-leave-active {
     opacity: 0;
     transform: translate3d(100%, 0, 0); }
 

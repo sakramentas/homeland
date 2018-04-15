@@ -19,6 +19,11 @@ public class Property {
     private String picture;
     private Integer id;
     private String affordabilityStatus;
+    private boolean detachedHouse;
+    private boolean parkingSpace;
+    private boolean gasHeating;
+    private boolean closeToWork;
+    private boolean quiteNeighboorhood;
 
     public GeoLocation getGeoLocation() {
         return geoLocation;
@@ -106,5 +111,45 @@ public class Property {
 
     public void setAffordabilityStatus(String affordabilityStatus) {
         this.affordabilityStatus = affordabilityStatus;
+    }
+
+    public boolean isDetachedHouse() {
+        return detachedHouse;
+    }
+
+    public void setDetachedHouse(boolean detachedHouse) {
+        this.detachedHouse = detachedHouse;
+    }
+
+    public boolean isParkingSpace() {
+        return parkingSpace;
+    }
+
+    public void setParkingSpace(boolean parkingSpace) {
+        this.parkingSpace = parkingSpace;
+    }
+
+    public boolean isGasHeating() {
+        return gasHeating;
+    }
+
+    public void setGasHeating(boolean gasHeating) {
+        this.gasHeating = gasHeating;
+    }
+
+    public boolean isCloseToWork() {
+        return closeToWork;
+    }
+
+    public void setCloseToWork(boolean closeToWork) {
+        this.closeToWork = closeToWork;
+    }
+
+    public boolean isQuiteNeighboorhood() {
+        return quiteNeighboorhood;
+    }
+
+    public void setQuiteNeighboorhood(boolean quiteNeighboorhood) {
+        this.quiteNeighboorhood = quiteNeighboorhood;
     }
 }

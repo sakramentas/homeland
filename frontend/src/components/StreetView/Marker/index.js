@@ -10,8 +10,19 @@ const getPixelPositionOffset = aptNum => (width, height) => ({
   y: -(height * (aptNum / 40))
 });
 
-const Marker = ({ title, floorArea, price = 0 }) => (
-  <div className="markerItemWrap">
+const colors = color =>
+  ({ green: '#549638', amber: '#CC7723', red: '#D33737' }[color || 'green']);
+
+const Marker = ({
+  title,
+  floorArea,
+  price = 0,
+  affordabilityStatus = 'green'
+}) => (
+  <div
+    className="markerItemWrap"
+    style={{ background: colors(affordabilityStatus) }}
+  >
     <div className="priceCon">€{price.toLocaleString()}</div>
     <span>
       {floorArea}m<sup>2</sup>

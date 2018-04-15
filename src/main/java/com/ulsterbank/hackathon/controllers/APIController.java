@@ -63,12 +63,12 @@ public class APIController {
             Customer customer = buildCustomer(queryStringMap);
             return affordabilityService.getAffordability(customer);
         } catch (HttpClientErrorException e) {
-            return null;
+            return new HashMap();
         }
     }
 
     private Customer buildCustomer(Map<String, String> queryStringMap) {
-        Customer customer = new Customer();
+        Customer customer = ulsterBankAPIService.getCustomer(null);
 
         String accountId = queryStringMap.get("accountid");
         String extraIncome = queryStringMap.get("extraincome");

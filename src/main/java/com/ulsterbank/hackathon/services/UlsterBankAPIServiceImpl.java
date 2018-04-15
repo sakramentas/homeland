@@ -1,6 +1,7 @@
 package com.ulsterbank.hackathon.services;
 
 import com.ulsterbank.hackathon.domain.Account;
+import com.ulsterbank.hackathon.domain.Customer;
 import com.ulsterbank.hackathon.domain.wrappers.Accounts;
 import com.ulsterbank.hackathon.domain.wrappers.Transactions;
 import org.springframework.beans.factory.annotation.Value;
@@ -44,6 +45,18 @@ public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
         Accounts accounts = results.getBody();
 
         return accounts;
+    }
+
+    @Override
+    public Customer getCustomer(String customerId){
+        if (customerId == null) {
+            customerId = getCustomerId();
+        }
+
+        String customerUrl = baseURL + "/customers/" + customerId;
+        ResponseEntity<Customer> results = restTemplate.exchange(customerUrl, HttpMethod.GET, addRequestHeaders(), Customer.class);
+        Customer customer = results.getBody();
+        return customer;
     }
 
     private String getCustomerId() {

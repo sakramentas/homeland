@@ -14,7 +14,7 @@ import config from '../../core/config';
 
 import './street-view.css';
 
-const [lat, lng] = config.COORDS.MAYOR_SQUARE;
+const [lat, lng] = config.COORDS.STREET_VIEW;
 
 const StreetViewPanormaWithAnOverlayView = compose(
   withProps({

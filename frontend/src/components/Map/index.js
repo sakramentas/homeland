@@ -29,13 +29,15 @@ const MyMapComponent = compose(
 )(({ properties, isMarkerShown, onMarkerClick }) => (
   <GoogleMap defaultZoom={16} defaultCenter={{ lat, lng }}>
     {isMarkerShown &&
-      properties.map(({ geo: { lat, lng }, id }) => (
-        <Marker
-          position={{ lat, lng }}
-          onClick={() => onMarkerClick(id)}
-          icon={require('../../assets/pin-05.png')}
-        />
-      ))}
+      properties.map(
+        ({ geo: { lat, lng }, id, affordabilityStatus = 'green' }) => (
+          <Marker
+            position={{ lat, lng }}
+            onClick={() => onMarkerClick(id)}
+            icon={require(`../../assets/${affordabilityStatus}_s.png`)}
+          />
+        )
+      )}
   </GoogleMap>
 ));
 

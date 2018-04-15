@@ -10,9 +10,9 @@ const getPixelPositionOffset = aptNum => (width, height) => ({
   y: -(height * (aptNum / 40))
 });
 
-const Marker = ({ title, price, floorArea }) => (
+const Marker = ({ title, floorArea, price = 0 }) => (
   <div className="markerItemWrap">
-    <div className="priceCon">€{price}</div>
+    <div className="priceCon">€{price.toLocaleString()}</div>
     <span>
       {floorArea}m<sup>2</sup>
     </span>
@@ -24,8 +24,7 @@ export default ({ properties }) => {
   return onlyFive.map((property, i) => {
     const {
       geo: { lat, lng },
-      address,
-      price
+      address
     } = property;
     return (
       <OverlayView

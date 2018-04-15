@@ -35,7 +35,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
 
         Property property2 = new Property();
         property2.setGeoLocation(new GeoLocation(53.349353,-6.242611));
-        property2.setPrice(new BigDecimal(140000));
+        property2.setPrice(new BigDecimal(300000));
         property2.setAddress("7 Boyne House, Custom House Square, Mayor Street Lower, IFSC, Dublin 1, D01 CX78");
         property2.setEnergyRate("C3");
         property2.setBedRoomQty(1);
@@ -44,7 +44,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
         property2.setDateEntered(LocalDate.of(2018, 04, 14));
         property2.setPicture("https://b.dmlimg.com/MjIxNTExYTc5ZjVmYWYwZjQ3NDI2Y2UxZTIzZjA4NTL9TQDbLM3FKfvEyHUIn63NaHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvMy9iLzNiMDc2MTBkMTJiY2ZjMGQ5NDAyZDllYjc4OGRjMmY0LmpwZ3x8fHx8fDYwMHg0NTB8fHx8.jpg");
         property2.setId(2);
-        property2.setAffordabilityStatus("green");
+        property2.setAffordabilityStatus("red");
         property1.setDetachedHouse(true);
         property1.setParkingSpace(true);
         property1.setGasHeating(true);
@@ -71,7 +71,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
 
         Property property4 = new Property();
         property4.setGeoLocation(new GeoLocation(53.349507,-6.245438));
-        property4.setPrice(new BigDecimal(160000));
+        property4.setPrice(new BigDecimal(185000));
         property4.setAddress("Apartment 14, First Floor, Malton House, Customs House Square, Dublin 1");
         property4.setEnergyRate("C3");
         property4.setBedRoomQty(1);
@@ -80,7 +80,7 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
         property4.setDateEntered(LocalDate.of(2018, 04, 14));
         property4.setPicture("https://b.dmlimg.com/OTNmMTJhNzNmNjhiZjVlMjZhZGQzN2NlYTdlNWRhZDaqmEWtnBCs61D6KWgIlB2iaHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvZS81L2U1NGU2ZjUwNzRmMTEyNzk5YzdkMGQ0ODJiNjI3N2JhLmpwZ3x8fHx8fDYwMHg0NTB8fHx8.jpg");
         property4.setId(4);
-        property4.setAffordabilityStatus("green");
+        property4.setAffordabilityStatus("amber");
         property1.setDetachedHouse(true);
         property1.setParkingSpace(false);
         property1.setGasHeating(false);
@@ -208,9 +208,6 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
     }
 
     public List<Property> getProperties(){
-
-        System.out.println(this.propertiesMock);
-
         return this.propertiesMock;
 
     }

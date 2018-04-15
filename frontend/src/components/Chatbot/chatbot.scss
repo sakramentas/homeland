@@ -1,5 +1,14 @@
 .chatbot {
+  height: 100%;
+  .rsc-container {
+    z-index: auto;
+  }
   .rsc-os-option-element {
     background: #03a9f4;
+  }
+  .rsc-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }

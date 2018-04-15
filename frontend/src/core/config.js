@@ -6,7 +6,7 @@ const config = {
   MAPS: {
     KEY: 'AIzaSyABKJoMXNrU4q7HyUMrpioXUCz9W83n6R4'
   },
-  API_HOST: '//172.20.10.2:8080',
+  API_HOST: '//localhost:8080',
   API: {
     PROPERTIES: '/homeland/api/properties',
     ACCOUNTS: '/homeland/api/accounts'

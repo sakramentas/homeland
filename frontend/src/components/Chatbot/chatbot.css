@@ -1,2 +1,10 @@
-.chatbot .rsc-os-option-element {
-  background: #03a9f4; }
+.chatbot {
+  height: 100%; }
+  .chatbot .rsc-container {
+    z-index: auto; }
+  .chatbot .rsc-os-option-element {
+    background: #03a9f4; }
+  .chatbot .rsc-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%; }

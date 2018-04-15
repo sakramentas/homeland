@@ -15,24 +15,33 @@ body {
 
 .App {
   text-align: center;
-  //height: 800px;
+  min-height: 100vh;
+  height: auto;
 }
 
 .transition-wrapper {
   position: relative;
-  z-index: 1;
+  min-height: 250px;
+  height: 100vh;
   .transition-item {
     position: fixed;
-    top: 0;
+    top: 60px;
     right: 0;
     left: 0;
+    bottom: 0;
   }
 }
 
-.chatbot-page {
-  overflow: auto;
+.chatbot-page,
+.maps-page,
+.streetview-page,
+.home-page {
   box-sizing: border-box;
-  height: 100vh;
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
   transition: transform 0.5s, opacity 0.5s;
 
   &.transition-appear {
@@ -56,86 +65,29 @@ body {
 }
 
 .maps-page {
-  overflow: auto;
-  box-sizing: border-box;
-  height: 100vh;
-  background-color: #fff;
-  transition: transform 0.5s, opacity 0.5s;
   transform: translate3d(0, 0, 0);
-
-  &.transition-appear {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  &.transition-appear.transition-appear-active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-  &.transition-leave {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-
-  &.transition-leave.transition-leave-active {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
 }
 
 .home-page {
-  overflow: auto;
-  box-sizing: border-box;
-  padding: 20px;
-  height: 100vh;
-  background-color: #fff;
-  transition: transform 0.5s, opacity 0.5s;
   transform: translate3d(0, 0, 0);
-
-  &.transition-appear {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  &.transition-appear.transition-appear-active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-  &.transition-leave {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-
-  &.transition-leave.transition-leave-active {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
 }
 
 .streetview-page {
-  overflow: auto;
-  box-sizing: border-box;
-  height: 100vh;
-  background-color: #fff;
-  transition: transform 0.5s, opacity 0.5s;
   transform: translate3d(0, 0, 0);
+}
 
-  &.transition-appear {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  &.transition-appear.transition-appear-active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-  &.transition-leave {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-
-  &.transition-leave.transition-leave-active {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
+.nav-street-view {
+  box-sizing: border-box;
+  background: rgba(#03a9f4, 0.8);
+  position: fixed;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  z-index: 1;
+  bottom: 15px;
+  left: 15px;
+  padding: 8px;
+  svg {
+    width: 30px;
   }
 }

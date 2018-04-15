@@ -2,8 +2,23 @@
   background-color: #092f63;
   padding: 5px;
   color: white;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+
   .header-logo {
     width: auto;
     height: 44px;
+  }
+
+  .nav-next {
+    width: 60px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }

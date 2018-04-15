@@ -6,10 +6,13 @@ const config = {
   MAPS: {
     KEY: 'AIzaSyABKJoMXNrU4q7HyUMrpioXUCz9W83n6R4'
   },
-  API_HOST: '//localhost:8080',
+  API_HOST: '//glacial-peak-56054.herokuapp.com',
   API: {
-    PROPERTIES: '/homeland/api/properties',
-    ACCOUNTS: '/homeland/api/accounts'
+    PROPERTIES:
+      '/homeland/api/properties?accountid=fa9df4d3-93bb-449a-9ee8-45b4c98d34b4&extraincome=220',
+    ACCOUNTS:
+      '/homeland/api/accounts?accountid=fa9df4d3-93bb-449a-9ee8-45b4c98d34b4&extraincome=220',
+    AFFORDABILITY: 'homeland/api/affordability'
   }
 };
 

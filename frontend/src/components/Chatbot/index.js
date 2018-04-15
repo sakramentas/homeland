@@ -45,6 +45,7 @@ class Chatbot extends React.PureComponent {
           className="chatbot"
           style={style}
           hideHeader
+          hideBotAvatar
           handleEnd={this.displayInter.bind(this)}
         />
       </ThemeProvider>,

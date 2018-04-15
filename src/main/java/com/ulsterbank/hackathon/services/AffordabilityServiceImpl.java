@@ -45,7 +45,7 @@ public class AffordabilityServiceImpl implements AffordabilityService {
         List<Property> properties = propertiesAPIService.getProperties();
         customer.setAnnualGrossSalary(calculateAnnualGrossSalary(transactions));
 
-        updatePropertiesAccordingToAffordability(customer, properties, totalOfExtraIncomes);
+//        updatePropertiesAccordingToAffordability(customer, properties, totalOfExtraIncomes);
 
         Map<String, Object> customerAndProperties = new LinkedHashMap<>();
 

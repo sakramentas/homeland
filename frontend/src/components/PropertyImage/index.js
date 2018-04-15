@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles.css';
 
-const PropertyImage = () => {
+const PropertyImage = ({ url }) => {
   return (
     <div className="property-image">
-      <img src={require('../../assets/house.png')} alt="house"/>
-      <span className="property-image__explore">Exploree around</span>
+      <img src={url} alt="house" />
+      <span className="property-image__explore">Explore around</span>
     </div>
   );
 };

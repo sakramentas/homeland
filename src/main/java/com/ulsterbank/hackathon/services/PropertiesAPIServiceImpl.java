@@ -45,11 +45,11 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
         property2.setPicture("https://b.dmlimg.com/MjIxNTExYTc5ZjVmYWYwZjQ3NDI2Y2UxZTIzZjA4NTL9TQDbLM3FKfvEyHUIn63NaHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvMy9iLzNiMDc2MTBkMTJiY2ZjMGQ5NDAyZDllYjc4OGRjMmY0LmpwZ3x8fHx8fDYwMHg0NTB8fHx8.jpg");
         property2.setId(2);
         property2.setAffordabilityStatus("red");
-        property1.setDetachedHouse(true);
-        property1.setParkingSpace(true);
-        property1.setGasHeating(true);
-        property1.setCloseToWork(true);
-        property1.setQuiteNeighboorhood(false);
+        property2.setDetachedHouse(true);
+        property2.setParkingSpace(true);
+        property2.setGasHeating(true);
+        property2.setCloseToWork(true);
+        property2.setQuiteNeighboorhood(false);
 
         Property property3 = new Property();
         property3.setGeoLocation(new GeoLocation(53.349322,-6.243839));
@@ -63,11 +63,11 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
         property3.setPicture("https://b.dmlimg.com/MDNlOGRiYjM5ZmNjMjVlZGExOTBiMjViN2M2ZDcwYWSjy757P1KgZw8PN5bCLz9uaHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvZC81L2Q1MmEzNmVmMjQ4ZGIwOWQ1ODQ0MDUxZTE5NDRjMmZmLmpwZ3x8fHx8fDYwMHg0NTB8fHx8.jpg");
         property3.setId(3);
         property3.setAffordabilityStatus("green");
-        property1.setDetachedHouse(false);
-        property1.setParkingSpace(true);
-        property1.setGasHeating(false);
-        property1.setCloseToWork(true);
-        property1.setQuiteNeighboorhood(true);
+        property3.setDetachedHouse(false);
+        property3.setParkingSpace(true);
+        property3.setGasHeating(false);
+        property3.setCloseToWork(true);
+        property3.setQuiteNeighboorhood(true);
 
         Property property4 = new Property();
         property4.setGeoLocation(new GeoLocation(53.349507,-6.245438));
@@ -81,11 +81,11 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
         property4.setPicture("https://b.dmlimg.com/OTNmMTJhNzNmNjhiZjVlMjZhZGQzN2NlYTdlNWRhZDaqmEWtnBCs61D6KWgIlB2iaHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvZS81L2U1NGU2ZjUwNzRmMTEyNzk5YzdkMGQ0ODJiNjI3N2JhLmpwZ3x8fHx8fDYwMHg0NTB8fHx8.jpg");
         property4.setId(4);
         property4.setAffordabilityStatus("amber");
-        property1.setDetachedHouse(true);
-        property1.setParkingSpace(false);
-        property1.setGasHeating(false);
-        property1.setCloseToWork(true);
-        property1.setQuiteNeighboorhood(true);
+        property4.setDetachedHouse(true);
+        property4.setParkingSpace(false);
+        property4.setGasHeating(false);
+        property4.setCloseToWork(true);
+        property4.setQuiteNeighboorhood(true);
 
         Property property5 = new Property();
         property5.setGeoLocation(new GeoLocation(53.349744,-6.244698));
@@ -99,11 +99,11 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
         property5.setPicture("https://b.dmlimg.com/ZmNhZWU5ZmJmZmFmYmMwOTc3YzAyODJkMzQ1ZjJhNTTut2qmywDwH6LPv_U37DRRaHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvOS9iLzliMGY0ZDNhMzdiMmEyZWEyY2FjZjU4NDM4Y2ZhYzYxLmpwZ3x8fHx8fDYwMHg0NTB8fHx8.jpg");
         property5.setId(5);
         property5.setAffordabilityStatus("amber");
-        property1.setDetachedHouse(true);
-        property1.setParkingSpace(false);
-        property1.setGasHeating(false);
-        property1.setCloseToWork(true);
-        property1.setQuiteNeighboorhood(true);
+        property5.setDetachedHouse(true);
+        property5.setParkingSpace(false);
+        property5.setGasHeating(false);
+        property5.setCloseToWork(true);
+        property5.setQuiteNeighboorhood(true);
 
         Property property6 = new Property();
         property6.setGeoLocation(new GeoLocation(53.349859,-6.246788));
@@ -117,11 +117,11 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
         property6.setPicture("https://b.dmlimg.com/OTdlYTA5ZmZmZTY1OGUwNDFmYTU0YWZiMWUxZjYyYzaeu1BThNHQL9XHtRAQ56FKaHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvZi80L2Y0YTU2ZTY4MDRhMTVmOGMxZDY4NzYzNWU4Y2Y0MDFjLmpwZ3x8fHx8fDYwMHg0NTB8fHx8.jpg");
         property6.setId(6);
         property6.setAffordabilityStatus("amber");
-        property1.setDetachedHouse(false);
-        property1.setParkingSpace(true);
-        property1.setGasHeating(false);
-        property1.setCloseToWork(true);
-        property1.setQuiteNeighboorhood(false);
+        property6.setDetachedHouse(false);
+        property6.setParkingSpace(true);
+        property6.setGasHeating(false);
+        property6.setCloseToWork(true);
+        property6.setQuiteNeighboorhood(false);
 
         Property property7 = new Property();
         property7.setGeoLocation(new GeoLocation(53.350081,-6.247393));
@@ -135,11 +135,11 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
         property7.setPicture("https://b.dmlimg.com/ZTJmMDU4N2E2NmJlYzc2Zjc5NmFjOGMxNTViZWVhYTAFS1K4tk1r2DmiQwsAtZhtaHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvYy9mL2NmNzJlMjg4NjBjMDFlYWVhZTBjYTVmODIxNGI0YjgxLmpwZ3x8fHx8fDYwMHg0NTB8fHx8.jpg");
         property7.setId(7);
         property7.setAffordabilityStatus("amber");
-        property1.setDetachedHouse(true);
-        property1.setParkingSpace(true);
-        property1.setGasHeating(true);
-        property1.setCloseToWork(false);
-        property1.setQuiteNeighboorhood(true);
+        property7.setDetachedHouse(true);
+        property7.setParkingSpace(true);
+        property7.setGasHeating(true);
+        property7.setCloseToWork(false);
+        property7.setQuiteNeighboorhood(true);
 
         Property property8 = new Property();
         property8.setGeoLocation(new GeoLocation(53.348413,-6.246967));
@@ -153,11 +153,11 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
         property8.setPicture("https://b.dmlimg.com/ZDBmYTVlYzYyNThmZjM0ZDcyYzQ1ZGNkNzE4NTA5ZTgD48-JX4iVEzNyFrIfqTABaHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvYi85L2I5YTE0OTc3MDgwODU5NWJhNjI0OTA1M2ExMWMzNWJhLmpwZ3x8fHx8fDYwMHg0NTB8fHx8.jpg");
         property8.setId(8);
         property8.setAffordabilityStatus("red");
-        property1.setDetachedHouse(true);
-        property1.setParkingSpace(false);
-        property1.setGasHeating(false);
-        property1.setCloseToWork(true);
-        property1.setQuiteNeighboorhood(false);
+        property8.setDetachedHouse(true);
+        property8.setParkingSpace(false);
+        property8.setGasHeating(false);
+        property8.setCloseToWork(true);
+        property8.setQuiteNeighboorhood(false);
 
         Property property9 = new Property();
         property9.setGeoLocation(new GeoLocation(53.350597,-6.246101));
@@ -171,11 +171,11 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
         property9.setPicture("https://b.dmlimg.com/N2U5NDhmYjUyNTRkYTdjNWZlMmFlMDRlY2M3YTgzN2LG9Gcv09TrubrQN6VnabgoaHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvZC80L2Q0NTgyOTRjMjcxMjIzY2I0MGI3NGI4MDE5ZTM3ZDAwLmpwZ3x8fHx8fDYwMHg0NTB8fHx8.jpg");
         property9.setId(9);
         property9.setAffordabilityStatus("red");
-        property1.setDetachedHouse(true);
-        property1.setParkingSpace(false);
-        property1.setGasHeating(false);
-        property1.setCloseToWork(true);
-        property1.setQuiteNeighboorhood(true);
+        property9.setDetachedHouse(true);
+        property9.setParkingSpace(false);
+        property9.setGasHeating(false);
+        property9.setCloseToWork(true);
+        property9.setQuiteNeighboorhood(true);
 
         Property property10 = new Property();
         property10.setGeoLocation(new GeoLocation(53.350602,-6.246019));
@@ -189,11 +189,11 @@ public class PropertiesAPIServiceImpl implements PropertiesAPIService {
         property10.setPicture("https://b.dmlimg.com/NjJmMzVkZmVkMDg2MmQ0ZDIyOWI0ZjNkYWZiNzQ0MWIj2JqxUSYaVf9TzyNAuhbzaHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvZS8wL2UwMWU0OWI0YmUzZjAzMTBhMTFkZWQ5NDc4ZjYzZjY3LmpwZ3x8fHx8fDYwMHg0NTB8fHx8.jpg");
         property10.setId(10);
         property10.setAffordabilityStatus("red");
-        property1.setDetachedHouse(false);
-        property1.setParkingSpace(false);
-        property1.setGasHeating(true);
-        property1.setCloseToWork(true);
-        property1.setQuiteNeighboorhood(false);
+        property10.setDetachedHouse(false);
+        property10.setParkingSpace(false);
+        property10.setGasHeating(true);
+        property10.setCloseToWork(true);
+        property10.setQuiteNeighboorhood(false);
 
         propertiesMock.add(property1);
         propertiesMock.add(property2);

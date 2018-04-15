@@ -13,7 +13,7 @@ import HeatmapLayer from 'react-google-maps/lib/components/visualization/Heatmap
 import config from '../../core/config';
 
 export const history = createHistory();
-const [lat, lng] = config.COORDS.CHQ;
+const [lat, lng] = config.COORDS.MAYOR_SQUARE;
 
 const MyMapComponent = compose(
   withProps({
@@ -27,7 +27,7 @@ const MyMapComponent = compose(
   withScriptjs,
   withGoogleMap
 )(({ properties, isMarkerShown, onMarkerClick }) => (
-  <GoogleMap defaultZoom={14} defaultCenter={{ lat, lng }}>
+  <GoogleMap defaultZoom={16} defaultCenter={{ lat, lng }}>
     {isMarkerShown &&
       properties.map(({ geo: { lat, lng }, id }) => (
         <Marker
@@ -60,7 +60,7 @@ export default class Map extends React.PureComponent {
     }, 3000);
   };
 
-  handleMarkerClick = (id) => {
+  handleMarkerClick = id => {
     this.props.history.push(`/property/${id}`);
   };
 

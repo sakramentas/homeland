@@ -1,7 +1,5 @@
 .property-page {
-  height: 100vh;
-  background-color: white;
-  margin-top: 57px; }
+  background: #fff; }
   .property-page .property-image {
     height: 274px;
     overflow: hidden;

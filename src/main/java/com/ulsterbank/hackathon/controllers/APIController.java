@@ -51,11 +51,22 @@ public class APIController {
 
     @RequestMapping(value = "/accounts/{accountId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Account singleAccount(@PathVariable("accountId") String id) {
-        try {
-            return ulsterBankAPIService.getSingleAccount(id);
-        } catch (HttpClientErrorException e) {
-            return ulsterBankAPIService.getSingleAccount("1d7de9d2-7129-492d-b505-0e4aa4775294");
-        }
+        Account account = new Account();
+        account.setId("1d7de9d2-7129-492d-b505-0e4aa4775294");
+        account.setSortCode("839999");
+        account.setAccountNumber("10002343");
+        account.setiBan(null);
+        account.setbBan(null);
+        account.setAccountType("current");
+        account.setAccountFriendlyName("Allan Current Account");
+        account.setAccountBalance(new BigDecimal(669.62));
+
+        return account;
+//        try {
+//            return ulsterBankAPIService.getSingleAccount(id);
+//        } catch (HttpClientErrorException e) {
+//            return ulsterBankAPIService.getSingleAccount("1d7de9d2-7129-492d-b505-0e4aa4775294");
+//        }
     }
 
     @RequestMapping(value = "/affordability")

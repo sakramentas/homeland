@@ -49,23 +49,34 @@ public class UlsterBankAPIServiceImpl implements UlsterBankAPIService {
 
     @Override
     public Customer getCustomer(String customerId) {
-        if (customerId == null) {
-            customerId = getCustomerId();
-        }
+//        if (customerId == null) {
+////            customerId = getCustomerId();
+////        }
+////
+////        String customerUrl = baseURL + "/customers/" + customerId;
+////        ResponseEntity<Customer> results = restTemplate.exchange(customerUrl, HttpMethod.GET, addRequestHeaders(), Customer.class);
+////        Customer customer = results.getBody();
 
-        String customerUrl = baseURL + "/customers/" + customerId;
-        ResponseEntity<Customer> results = restTemplate.exchange(customerUrl, HttpMethod.GET, addRequestHeaders(), Customer.class);
-        Customer customer = results.getBody();
-        return customer;
+        Customer mockCustomer = new Customer();
+        mockCustomer.setId("95e9972e-5b1b-4614-93b1-f546c6a89e4b");
+        mockCustomer.setGivenName("Allan");
+        mockCustomer.setFamilyName("Haerber");
+        mockCustomer.setAddress1("O'Connel Street");
+        mockCustomer.setTown("Dublin");
+        mockCustomer.setCounty("Dublin");
+        mockCustomer.setPostCode("D04HJ66");
+        mockCustomer.setFirstTimeBuyer(false);
+        return mockCustomer;
     }
 
     private String getCustomerId() {
-        String customersUrl = baseURL + "/customers";
-        ResponseEntity<Accounts> results = restTemplate.exchange(customersUrl, HttpMethod.GET, addRequestHeaders(), Accounts.class);
-        Accounts customers = results.getBody();
-        String apiCustomer = customers.getAccounts().get(0).getId();
-
-        return apiCustomer;
+        return "95e9972e-5b1b-4614-93b1-f546c6a89e4b";
+//        String customersUrl = baseURL + "/customers";
+//        ResponseEntity<Accounts> results = restTemplate.exchange(customersUrl, HttpMethod.GET, addRequestHeaders(), Accounts.class);
+//        Accounts customers = results.getBody();
+//        String apiCustomer = customers.getAccounts().get(0).getId();
+//
+//        return apiCustomer;
     }
 
     @Override
